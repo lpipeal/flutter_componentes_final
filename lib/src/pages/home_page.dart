@@ -55,6 +55,7 @@ class HomePage extends StatelessWidget {
                 final List<Widget> opciones =[]; 
 
                 data.forEach((opt) { 
+
                     
                     print(opt['ruta']);
                     final WidgetTemp = ListTile(
