@@ -14,9 +14,22 @@ class CardPage extends StatelessWidget {
         //padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20) ,
         children: <Widget>[
             _getCardTipo1(),
-            SizedBox(height: 30.0,),
+            SizedBox(height: 15.0,),
             _getCardTipo2(),
-              
+            SizedBox(height: 15.0,),
+            _getCardTipo1(),
+            SizedBox(height: 15.0,),
+            _getCardTipo2(),
+            SizedBox(height: 15.0,),
+            _getCardTipo1(),
+            SizedBox(height: 15.0,),
+            _getCardTipo2(),
+            SizedBox(height: 15.0,),
+            _getCardTipo1(),
+            SizedBox(height: 15.0,),
+            _getCardTipo2(),
+            SizedBox(height: 15.0,),
+             
                     ],
                   )
                 );
@@ -26,6 +39,8 @@ class CardPage extends StatelessWidget {
                    Widget  _getCardTipo1() {
             
                      return Card(
+                       elevation: 5,
+                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
                        child: Column(
                          children: [
                            ListTile(
@@ -52,28 +67,44 @@ class CardPage extends StatelessWidget {
             
               Widget _getCardTipo2() {
                   return Card(
-                    child: Column(
-                      children: 
-                      
-                      <Widget>[
-                        FadeInImage(
-                          placeholder: AssetImage('assets/loading.gif'), 
-                          image: NetworkImage('https://1.bp.blogspot.com/-1y6G2P0cklw/Vq00d8oxg7I/AAAAAAAC8jk/e30sNTkSFAE/s1600/Byodo-en%2Bel%2Btemplo.%2BKyoto%252C%2BJap%25C3%25B3n%2Blugares%2Bhermosos%2Bfondos%2By%2Bwallpapers.jpg'),
-                          fadeInDuration: Duration(milliseconds: 200),
-                          height: 200,
-                          fit: BoxFit.cover,
-                          ),
-                          
+                      elevation: 5,
+                      clipBehavior: Clip.antiAlias,
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
+                      shadowColor: Colors.amber,
+          
+                      child: Column(
+                        children: 
+                        <Widget>[
+                          FadeInImage(
+                            placeholder: AssetImage('assets/loading.gif'), 
+                            image: NetworkImage('https://1.bp.blogspot.com/-1y6G2P0cklw/Vq00d8oxg7I/AAAAAAAC8jk/e30sNTkSFAE/s1600/Byodo-en%2Bel%2Btemplo.%2BKyoto%252C%2BJap%25C3%25B3n%2Blugares%2Bhermosos%2Bfondos%2By%2Bwallpapers.jpg'),
+                            fadeInDuration: Duration(milliseconds: 200),
+                            height: 230,
+                            width: 400,
+                            fit: BoxFit.cover,
+                            
+                            ),
+                            
 
-                        // Image(
-                        //   image: NetworkImage('https://1.bp.blogspot.com/-1y6G2P0cklw/Vq00d8oxg7I/AAAAAAAC8jk/e30sNTkSFAE/s1600/Byodo-en%2Bel%2Btemplo.%2BKyoto%252C%2BJap%25C3%25B3n%2Blugares%2Bhermosos%2Bfondos%2By%2Bwallpapers.jpg'),
-                        // ),
+                          // Image(
+                          //   image: NetworkImage('https://1.bp.blogspot.com/-1y6G2P0cklw/Vq00d8oxg7I/AAAAAAAC8jk/e30sNTkSFAE/s1600/Byodo-en%2Bel%2Btemplo.%2BKyoto%252C%2BJap%25C3%25B3n%2Blugares%2Bhermosos%2Bfondos%2By%2Bwallpapers.jpg'),
+                          // ),
+                          Container(
+                            child: Text('Texto de Imagen'),
+                            decoration: BoxDecoration(
+                              boxShadow:<BoxShadow>[
+                                BoxShadow(
+                                  blurRadius:25,
+                                  spreadRadius: 0.8,
+                                  offset: Offset(0.0,20)
+                                )
+                              ] 
+                            ),
+                          ),
                         
-                        Container(
-                          padding: EdgeInsets.all(10),
-                          child: Text('bordes redondeados'))
-                      ],
-                    ),
+                        ],
+                      ),
+                    
                   );
 
               }
