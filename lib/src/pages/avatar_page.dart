@@ -6,7 +6,15 @@ class AvatarPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 25,
+        
         title: Text('Avatar Page'),
+        
+      ),
+      body: Text('Avatar Page'),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: (){print('Avatar Page');},
       ),
     );
   }
