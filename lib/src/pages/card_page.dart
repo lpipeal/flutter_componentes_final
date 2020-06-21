@@ -50,14 +50,24 @@ class CardPage extends StatelessWidget {
                            ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.end,
+                           
                             children: <Widget>[
+                              
                                FlatButton(
                                  child: Text('Cancelar'),
+                                 color: Colors.red,
+                                 shape: StadiumBorder(),
+                                 textColor: Colors.white,
+                                 
                                  onPressed: (){}),
+                                  SizedBox(width: 10,),
                                FlatButton(
                                  child: Text('Ok'),
-                                 onPressed: (){})
-            
+                                 color: Colors.green[200],
+                                 shape: StadiumBorder(),
+                                 textColor: Colors.white,
+                                 onPressed: (){}),
+                                 SizedBox(width: 20,),
                             ],
                           ) 
                          ],
