@@ -19,8 +19,25 @@
 
         {
             "ruta" : "container",
-            "icon" : "add",
-            "texto": "Containers"
+            "icon" : "container",
+            "texto": "Animated-Containers"
+        },
+        {
+            "ruta" : "inputs",
+            "icon" : "input",
+            "texto": "inputs"
+        },
+
+        {
+            "ruta" : "basico",
+            "icon" : "container",
+            "texto": "Diseño Basico"
+        },
+
+        {
+            "ruta" : "scroll",
+            "icon" : "container",
+            "texto": "Diseño Scroll"
         }
     ]
 }
