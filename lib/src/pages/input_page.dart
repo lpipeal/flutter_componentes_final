@@ -14,6 +14,9 @@ class _InputPageState extends State<InputPage> {
    String _email= '';
    String _password= '';
    String _fecha= '';
+   String _opcionSeleccionada='volar';
+
+   List <String>_poderes = ['volar','Rayos X', 'Super Aliento','Super Fuerza'];
 
    TextEditingController _inputFieldDateController = new TextEditingController();
  
@@ -45,6 +48,9 @@ class _InputPageState extends State<InputPage> {
                     _crearPassword(),
                     Divider(),
                     _crearDatePicker(context),
+                    Divider(),
+                    _crearDropDown(),
+
 
                 ],
             ),
@@ -86,6 +92,7 @@ class _InputPageState extends State<InputPage> {
         
         title: Text('Nombre es: $_nombre'),
         subtitle: Text('Email es: $_email'),
+        trailing: Text(_opcionSeleccionada),
         
       );
 
@@ -178,10 +185,8 @@ class _InputPageState extends State<InputPage> {
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20),
             ),
-            counter: Text('${_nombre.length}'),
             hintText: 'Fecha de nacimiento',
             labelText: 'Fecha de nacimiento',
-            helperText: 'Solo fecha nacimiento',
             suffixIcon: Icon(Icons.perm_contact_calendar),
             icon: Icon(Icons.calendar_today),
             prefixIcon: Icon(Icons.calendar_today),
@@ -207,9 +212,43 @@ class _InputPageState extends State<InputPage> {
          _inputFieldDateController.text=_fecha;
        });
      }
-
-     
-
   }  
+
+  List<DropdownMenuItem<String>>getOpcionesDropdown(){
+
+    List<DropdownMenuItem<String>> lista = new List();
+      _poderes.forEach((poder) { 
+          lista.add(DropdownMenuItem(
+            child: Text(poder),
+            value: poder,
+          ));
+      });
+
+      return lista;
+  }
+
+  Widget _crearDropDown(){
+
+     return Row(
+       children: <Widget>[
+         Icon(Icons.select_all),
+         SizedBox(width: 50,),
+            Expanded(
+                    child: DropdownButton(
+                    items: getOpcionesDropdown(),
+                    value: _opcionSeleccionada,
+                    onChanged: (opt){
+                    setState(() {
+                      _opcionSeleccionada=opt;
+                     print(opt);
+                    });
+                   
+                },
+           ),
+         ),
+       ],
+     );
+
+   }  
 
 }
