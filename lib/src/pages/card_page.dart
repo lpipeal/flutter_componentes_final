@@ -91,8 +91,7 @@ class CardPage extends StatelessWidget {
                             fadeInDuration: Duration(milliseconds: 200),
                             height: 230,
                             width: 400,
-                            fit: BoxFit.cover,
-                            
+                            fit: BoxFit.cover,  
                             ),
                             
 

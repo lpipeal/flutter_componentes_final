@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 
 import 'package:componentes/src/pages/alert_page.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 
 class MyApp extends StatelessWidget {
@@ -10,6 +11,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('en', 'US'),
+        const Locale('es', 'CO'),
+      ],
       title: 'Material App',
       // home:  HomePageTemp()
       //home:  HomePage()
