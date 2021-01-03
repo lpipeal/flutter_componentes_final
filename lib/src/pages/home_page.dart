@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
 
+  List<String> lista = ["uno", "dos", "tres"];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,8 +35,6 @@ class HomePage extends StatelessWidget {
                      );
               },
             );
-
-
             
         }
 
@@ -55,11 +55,8 @@ class HomePage extends StatelessWidget {
                 final List<Widget> opciones =[]; 
 
                 data.forEach((opt) { 
-
-                    
                     print(opt['ruta']);
                     final WidgetTemp = ListTile(
-                      
                       title: Text(opt['texto']),
                       leading: getIcon(opt['icon']),
                       trailing: Icon(Icons.keyboard_arrow_right, color: Colors.blue),
@@ -71,7 +68,6 @@ class HomePage extends StatelessWidget {
 
                           // Navigator.push(context, route);
                           Navigator.pushNamed(context, opt['ruta']);
-
                       },
                     );
                   opciones..add(WidgetTemp)
@@ -81,4 +77,26 @@ class HomePage extends StatelessWidget {
                 return opciones;
                 
             }
+
+
+            List<Widget> _crearItemsCorta(){
+                
+                return lista.map((item) {
+                  Column(
+                    children: [
+                      ListTile(
+                        title: Text(item + "!"),
+                        subtitle: Text("Subtitulo"),
+                        leading: Icon(Icons.account_balance_wallet),
+                        trailing: Icon(Icons.keyboard_arrow_right),     
+                        onTap: (){},                 
+                        ),
+                  
+                      Divider()
+                    ],
+                  );
+                }).toList();
+            }
 }
+
+

@@ -6,8 +6,6 @@ class InputPage extends StatefulWidget {
   _InputPageState createState() => _InputPageState();
 }
 
-
-
 class _InputPageState extends State<InputPage> {
  
    String _nombre= '';
@@ -30,8 +28,6 @@ class _InputPageState extends State<InputPage> {
     ); 
   } 
 
-
-
     Widget _bodyContent(){
         return SingleChildScrollView(
             padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
@@ -50,12 +46,8 @@ class _InputPageState extends State<InputPage> {
                     _crearDatePicker(context),
                     Divider(),
                     _crearDropDown(),
-
-
                 ],
             ),
-
-
         );
     }
 
@@ -76,6 +68,7 @@ class _InputPageState extends State<InputPage> {
             icon: Icon(Icons.account_circle),
             prefixIcon: Icon(Icons.account_circle),
           ),
+          
           onChanged: (valor){
             
             setState(() {

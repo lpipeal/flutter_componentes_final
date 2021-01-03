@@ -18,10 +18,7 @@ class MyApp extends StatelessWidget {
       supportedLocales: [
         const Locale('en', 'US'),
         const Locale('es', 'CO'),
-        
       ],
-
-
       title: 'Material App',
       // home:  HomePageTemp()
       //home:  HomePage()
